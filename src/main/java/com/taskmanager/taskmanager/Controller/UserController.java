@@ -9,31 +9,32 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserController {
 
     @Autowired
     public UserService userService;
-    @CrossOrigin(origins = "http://localhost:4200")
+
     @PostMapping("/insertuser")
     public User InsertUser(@RequestBody User user)
     {
         return userService.InsertUser(user);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+
     @GetMapping("/displayuser")
     public List<User> DisplayUser() {
         return userService.DisplayUser();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+
     @DeleteMapping("/deleteuser/{id}")
     public void DeleteUser(@PathVariable Long id) {
         userService.DeleteUser(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+
     @PostMapping("/login")
     public User loginUser(@RequestBody User loginRequest) {
         String username = loginRequest.getEmail();
