@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200") // CORS setup for your frontend
+@CrossOrigin(origins = "http://task-management-system-rushik.s3-website-us-east-1.amazonaws.com") // CORS setup for your frontend
 @RestController
 public class TaskController {
 

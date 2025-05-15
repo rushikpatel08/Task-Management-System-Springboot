@@ -9,7 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://task-management-system-rushik.s3-website-us-east-1.amazonaws.com")
 @RestController
 public class UserController {
 
