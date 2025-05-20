@@ -31,7 +31,7 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 sshagent(['ec2-key-pair']) {
-                    sh "scp -o StrictHostKeyChecking=no target/springboot_aws.jar ${EC2_USER}@${EC2_HOST}:${APP_PATH}"
+                    sh "scp -o StrictHostKeyChecking=no target/taskmanager-0.0.1-SANPSHOT.jar ${EC2_USER}@${EC2_HOST}:${APP_PATH}"
                     sh "ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} 'nohup java -jar ${APP_PATH} > /dev/null 2>&1 &'"
                 }
             }
