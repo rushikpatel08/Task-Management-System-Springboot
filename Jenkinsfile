@@ -24,7 +24,7 @@ pipeline {
 
          stage('Test Spring Boot App') {
             steps {
-                sh 'mvn test'
+                sh './mvnw test'
             }
         }
 
